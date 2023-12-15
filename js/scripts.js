@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
         function createBoard() {
       for (let i = 0; i < cards.length; i++) {
         const card = document.createElement('img')
-        card.setAttribute('src', 'images/board.png')
+        card.setAttribute('src', 'images/fundo.png')
         card.setAttribute('data-id', i)
         card.addEventListener('click', flipCard)
         board.appendChild(card)
