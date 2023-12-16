@@ -1,4 +1,4 @@
-# JogoJSDOM
+# Jogo da memoria com JSDOM
 * Ainda incompleto  *
 Jean Pereira Coelho
 regras do jogo:
