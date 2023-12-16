@@ -1,10 +1,41 @@
-h3{
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(4, 100px);
+  gap: 10px;
+}
+
+img {
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+}
+
+#result {
+  margin-top: 20px;
   text-align: center;
 }
-.board {
-  margin: 0 auto;
-  display: flex;
-  flex-wrap: wrap;
-  width: 400px;
-  height: 300px;
+
+button {
+  padding: 10px;
+  margin-top: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #45a049;
 }
