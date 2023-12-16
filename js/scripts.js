@@ -1,5 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
-       const cards = [
+  // Solicitar o nome do jogador
+  const playerName = prompt('Digite seu nome:');
+
+  const cards = [
         {
           name: 'android',
           img: 'images/android.png'
