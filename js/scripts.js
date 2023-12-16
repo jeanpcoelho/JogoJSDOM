@@ -56,19 +56,20 @@ document.addEventListener('DOMContentLoaded', () => {
        cards.sort(() => 0.5 - Math.random())
   
         const board = document.querySelector('.board')
-    const resultView = document.querySelector('#result')
-    let cardsChosen = [] 
-    let cardsChosenId = [] 
-    let cardsWon = [] 
+        const resultView = document.querySelector('#result');
+        let cardsChosen = [];
+        let cardsChosenId = [];
+        let cardsWon = [];
+        
         function createBoard() {
-      for (let i = 0; i < cards.length; i++) {
-        const card = document.createElement('img')
-        card.setAttribute('src', 'images/fundo.png')
-        card.setAttribute('data-id', i)
-        card.addEventListener('click', flipCard)
-        board.appendChild(card)
-      }
-    }
+          for (let i = 0; i < cards.length; i++) {
+            const card = document.createElement('img');
+            card.setAttribute('src', 'images/fundo.png');
+            card.setAttribute('data-id', i);
+            card.addEventListener('click', flipCard);
+            board.appendChild(card);
+          }
+        }
       function checkForMatch() {
       const cards = document.querySelectorAll('img')
       const optionOneId = cardsChosenId[0]
