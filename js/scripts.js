@@ -93,12 +93,21 @@ document.addEventListener('DOMContentLoaded', () => {
       }
       cardsChosen = []
       cardsChosenId = []
-           resultView.textContent = 'Pares Encontrados: '+cardsWon.length
-      if  (cardsWon.length === cards.length/2) {
-        resultView.textContent = 'Parabéns! Você conseguiu encontrar todas as cartas'
+      resultView.textContent = 'Pares Encontrados: ' + cardsWon.length;
+
+      if (cardsWon.length === cards.length / 2) {
+        // Mostrar informações do jogador ao finalizar o jogo
+        resultView.textContent = 'Parabéns, ${playerName}! Você encontrou todas as cartas.';
+  
+        // Adicionar botão "Jogar Novamente"
+        const playAgainButton = document.createElement('button');
+        playAgainButton.textContent = 'Jogar Novamente';
+        playAgainButton.addEventListener('click', playAgain);
+        resultView.appendChild(playAgainButton);
       }
     }
-          function flipCard() {
+  
+    function flipCard() {
       let cardId = this.getAttribute('data-id')
       cardsChosen.push(cards[cardId].name)
       cardsChosenId.push(cardId)
@@ -107,6 +116,25 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(checkForMatch, 500)
       }
     }
+    function playAgain() {
+      // Limpar jogo
+      board.innerHTML = '';
+      resultView.innerHTML = '';
   
-    createBoard()
-  })
+      // Embaralhar as cartas 
+      cards.sort(() => 0.5 - Math.random());
+  
+      // Reiniciar as variáveis
+      cardsChosen = [];
+      cardsChosenId = [];
+      cardsWon = [];
+  
+      // Criar  novo jogo
+      createBoard();
+    }
+  
+    
+    createBoard();
+  });
+
+  
